@@ -1,5 +1,5 @@
 package com.company;
-public class Ships 
+public class Ship 
 {
 	private int mastsQuantity;
 	private char ship[][];
@@ -18,10 +18,10 @@ public class Ships
 //			}
 //			return(ship);
 //		}
-		public String getOwner()
-		{
-			return(owner);
-		}
+			public String getOwner()
+			{
+				return(owner);
+			}
 			public void setMastsQuantity(int mastsQuantity)
 			{
 				this.mastsQuantity = mastsQuantity;
@@ -34,4 +34,5 @@ public class Ships
 			{
 				this.owner = owner;
 			}
+			
 }
