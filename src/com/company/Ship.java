@@ -1,3 +1,4 @@
+package com.company;
 public class Ships 
 {
 	private int mastsQuantity;
