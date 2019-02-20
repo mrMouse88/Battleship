@@ -2,39 +2,27 @@ package com.company;
 
 public class Main {
 
-	public static void GetWinner(char board[][])
-	{
-		
-		//sprawdzanie w poziomie
-		for(int j=1;j==10;j++)
-		{
-			int h=0;
-			for(int i=1;i==10;i++)
-			{
-				
-				if((board[j][i])==(board[j][i+1]))
-				{
-					h++;
-				}
-				
-			}
-			
-			//TODO
-			//Jeśli h jest równe liczbie masztów to statek został zatopiony
-			//if(h == Ships.mastsQuantity)
-			
-			
-				
-			{
-					
-				System.out.println("Wygrały: "+board[j][1]);
-				break;
-			}
-		}
-	}		
-	
     public static void main(String[] args) {
-	// write your code here
-    
+
+        final Player player = createPlayer();
+        player.addShip(2);
+
+        System.out.println( player.ships.get(0).isDrowned());
+
+
+//        s1.masts.get(0).setHited(true);
+//        s1.masts.get(1).setHited(false);
+
+//        System.out.println(player.ships[0].isDrowned());
+    }
+
+    public static Player createPlayer() {
+        Ship s1 = new Ship(new Mast(12, 12), new Mast(11, 11));
+        Ship s2 = new Ship(new Mast(12, 12));
+        Ship s3 = new Ship(new Mast(12, 12), new Mast(11, 11));
+        Ship s4 = new Ship(new Mast(12, 12), new Mast(11, 11));
+
+        Ship[] ships = {s1, s2};
+        return new Player("John");
     }
 }

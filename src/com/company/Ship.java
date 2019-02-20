@@ -1,38 +1,30 @@
 package com.company;
-public class Ship 
-{
-	private int mastsQuantity;
-	private char ship[][];
-	private String owner; 
-	
-		public int getMastsQuantity()
-		{
-			return(mastsQuantity);
-		}
-		//TODO
-//		public char[][] getShip()
-//		{	
-//			for(i=1;i=mastsQuantity;i++)
-//			{
-//				ships[][]='X';
-//			}
-//			return(ship);
-//		}
-			public String getOwner()
-			{
-				return(owner);
-			}
-			public void setMastsQuantity(int mastsQuantity)
-			{
-				this.mastsQuantity = mastsQuantity;
-			}
-			public void setShip(char [][]ship) 
-			{
-				this.ship = ship;
-			}
-			public void setOwner(String owner)
-			{
-				this.owner = owner;
-			}
-			
+
+import java.util.ArrayList;
+
+public class Ship {
+    //ArrayList<Mast> masts = new ArrayList<>();
+    Mast[] masts;
+
+    public Ship(Mast... masts) {
+        for (Mast mast : masts) {
+            this.masts = masts;
+        }
+    }
+
+    public boolean isDrowned() {
+        for (Mast mast : masts) {
+            if (!mast.isHited()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Ship with " +
+                this.masts.length +
+                " masts";
+    }
 }
